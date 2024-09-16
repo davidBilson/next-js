@@ -1,0 +1,25 @@
+React Server Components
+
+RSC introduces two new ways of creating React components, splitting them into two types
+
+- Server components
+in nextsjs, all components are server components by default
+they have the ability to run tasks like reading files or fetchind data from a database
+they don't have the ability to use hooks or handle user interactions
+
+- Client components
+to create a client component, it's necessary to add "use client" at the top of the component file
+client components can't perform tasks like reading files, but they have the ability to use hooks and manage interactions
+
+
+Routing
+
+Next has a file system based routing
+URL paths that users can access in the browser are defined by files and folders in your codebase
+
+Routing conventions
+all routes must be placed inside the app folder
+every file that corresponds to a route must be named page.tsx 
+every folder corresponds to a path segmenet in the browser URL
+
+Nested routes
