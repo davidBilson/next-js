@@ -1,25 +1,53 @@
-React Server Components
-
+# React Server Components
 RSC introduces two new ways of creating React components, splitting them into two types
-
 - Server components
 in nextsjs, all components are server components by default
 they have the ability to run tasks like reading files or fetchind data from a database
 they don't have the ability to use hooks or handle user interactions
-
 - Client components
 to create a client component, it's necessary to add "use client" at the top of the component file
 client components can't perform tasks like reading files, but they have the ability to use hooks and manage interactions
 
 
-Routing
-
+# Routing
 Next has a file system based routing
 URL paths that users can access in the browser are defined by files and folders in your codebase
 
-Routing conventions
+# Routing conventions
 all routes must be placed inside the app folder
 every file that corresponds to a route must be named page.tsx 
 every folder corresponds to a path segmenet in the browser URL
 
 Nested routes
+
+# Private Folders
+A private folder indicates that it is a private implementation detail and should not be considered by the routing system
+The folder and all its subfolders are excluded from routing
+Prefix the folder name with an underscore
+## importance
+for separating Ui logic from routing logic
+for consistently organizing internal files across a project
+for sorting and grouping files in code editors
+for avoiding potential naming conflicts with future Next.js file conventions
+
+# Route Groups
+Allows us to logically group our routes and project files without affecting the URL path structure
+Allows to selectively apply a layout to certain segments while leaving others unchanged
+
+# Layouts
+A page is Ui that is unique to a route
+A layout is Ui that is shared between multiple pages in the app
+
+# Configuring  Metadata
+Export a static metadata object
+Export a dynamic generateMetadata function
+- Metadata rules
+Both layout and page files cannot export metadata. If defined in layout, it applies to all pages in that layout, but if defined in a page, it only applies to that page
+(A)=1-2-3
+1a 2a 3a
+Metadata is read in order, from the root level down to the final page level
+When there is metadata in multiple places for the same route, they get combined, but page metadata will replace layout metadata if they have the same properties
+
+# Dynamic metadata on video 17
+
+# Title fallback and default for meta data on video 18 (dyanmic titles)
